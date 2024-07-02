@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 18.x
       - name: Install Dependencies
-        run: npm install --save-dev @babel/plugin-transform-private-property-in-object; sudo chmod +x node_modules/.bin/react-scripts
+        run: npm install --save-dev @babel/plugin-transform-private-property-in-object;  sudo chmod +x node_modules/.bin/react-scripts
       - name: Build Project
         run: npm run build
       - name: Upload artifact to enable deployment
