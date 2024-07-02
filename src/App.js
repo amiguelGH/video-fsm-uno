@@ -1,11 +1,9 @@
 import React from "react";
 import { useMachine} from "@xstate/react";
-import { assign, createActor, createMachine, fromCallback, fromPromise, fromTransition, setup, sendTo, fromObservable,  fromEventObservable, getNextSnapshot} from "xstate";
+import { assign,  fromPromise,  setup,  fromObservable} from "xstate";
 import { percentage, minutes, seconds } from "./utils";
 import {Logger, ConsoleLogger} from 'react-console-logger';
-import { interval, Subscribable, fromEvent, Observable } from "rxjs";
-import { useRef, EventObject } from 'react';
-import { map, take } from 'rxjs/operators';
+import { interval } from "rxjs";
 
 
 import "./reset.css";
@@ -23,27 +21,10 @@ logger.info('Hello World');
 
 const myLogger = new Logger();
   
-const IntervalComponent = () => {
-  const intervalId = useRef(null);
-};
 
 
-const miContexto2 = new Observable();
 
 
-const   miContexto$  = {
-  video: null,
-  duration: 0,
-  elapsed: 0,
-  numVideos: 0,
-  avance: 0,
-  myInterval: 5000,
-  intervalId: null,
-  userId: "amiguel777@gmail.com",
-  observador: "vacio",
-  observa: null,
-  observando: 0,
-} ;
 
 /**
  * Video State Machine
@@ -464,8 +445,7 @@ const Buttons = ({ current, send }) => {
 
 const ButtonObservador = ({ current, send }) => {
   
-  const estado = "inicial";
-
+  
   if (current.context.video !== null) {
     return (
       <button  style={{backgroundColor: '#CCC'}}
